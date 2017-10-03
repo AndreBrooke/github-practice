@@ -10,10 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20171003033057) do
+
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
@@ -24,10 +28,28 @@ ActiveRecord::Schema.define(version: 20171003033057) do
     t.datetime "updated_at", null: false
   end
 
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+
+
+  create_table "homes", force: :cascade do |t|
+    t.string "property_name"
+    t.string "property_type"
+    t.string "price"
+    t.integer "room_numbers"
+    t.integer "bathroom_numbers"
+
+
   create_table "notes", force: :cascade do |t|
     t.string "title"
     t.string "content"
+
     t.boolean "check"
+
+
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
